@@ -1,0 +1,168 @@
+<!-- main page : index.html -->
+
+<!-- SEE LINE 80: SCRIPT REFERENCING-->
+
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Bill With Settings</title>
+
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+
+  <body>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="twelve columns box">
+
+          <h3>Bill with settings</h3>
+
+          <div class="">
+
+            Select the call or sms radio button. Update the appropriate total and the overall total when the ADD button in pressed.
+
+            <i>Calls costs should now be configurable using the settings section.</i>
+
+          </div>
+
+          <div class="">
+
+            <i>If the total cost exceed the warning level show the total cost in orange, if it exceeds the critical level show it in red and prevent any new costs from being added. The warning and critical level should both be configurable now.</i>
+
+          </div>
+
+
+          <hr>
+
+
+          <div class="row">
+
+
+            <div class="six columns">
+
+              <h5>Bill type</h5>
+
+              <form class="" action="/action" method="post">
+
+              <label class="">
+
+                <input type="radio" name="billItemType" class="billItemTypeWithSettings" value="call">
+
+                <span class="label-body">Call</span>
+
+              </label>
+
+              <label class="">
+
+                <input type="radio" name="billItemType" class="billItemTypeWithSettings" value="sms">
+
+                <span class="label-body" >SMS</span>
+
+              </label>
+
+              <button class="button-primary" type="submit" name="addButton">Add</button>
+
+              </form>
+
+
+              <h5>Totals</h5>
+
+                  <table>
+
+                    <tr>
+
+                      <td>
+
+                        <a href="/actions/call">Call total</a>
+
+                      </td>
+
+                      <td>R<span placeholder="0.00" class="callTotalSettings">{{calculatedCalls}}</span> </td>
+
+                    </tr>
+
+                    <tr>
+
+                      <td>
+
+                        <a href="/actions/sms">SMS total</a>
+
+                      </td>
+
+                      <td>R<span placeholder="0.00" class="smsTotalSettings">{{calculatedSms}}</span> </td>
+
+                    </tr>
+
+                    <tr>
+
+                      <td>
+
+                        <a href="/actions">Total</a>
+
+                      </td>
+
+                      <td> R<span placeholder="0.00" class="totalSettings {{addClasses}}">{{calculatedTotal}}</span> </td>
+
+                    </tr>
+
+                  </table>
+
+                  <div class="">
+
+                    <form class="" action="clear" method="post">
+
+                      <button class="button-primary" type="submit" name="clearButton">Clear All Values</button>
+
+                    </form>
+
+                  </div>
+
+            </div>
+
+
+            <div class="six columns">
+
+              <h5>Settings</h5>
+
+              <form class="" action="/settings" method="post">
+
+                <label for="callInput">Call cost</label>
+
+                <input name="callInput" class="u-full-width callCostSetting" type="text" placeholder="eg. 2.55" value="{{callValue}}">
+
+                <label for="smsInput">SMS cost</label>
+
+                <input name="smsInput" class="u-full-width smsCostSetting" type="text" placeholder="eg. 0.65" value="{{smsValue}}" >
+
+                <label for="warningInput">Warning level</label>
+
+                <input name="warningInput" class="u-full-width warningLevelSetting " type="text" placeholder="eg. 30.00" class="warningLevel" value="{{warningValue}}" >
+
+                <label for="criticalInput">Critical level</label>
+
+                <input name="criticalInput" class="u-full-width criticalLevelSetting" type="text" placeholder="eg. 65.00" value="{{criticalValue}}" >
+
+                <button class="button-primary updateSettings" type="submit" name="updateButton">Update settings</button>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>

@@ -1,0 +1,37 @@
+{{{body}}}
+
+
+<h2>Settings Bill Actions</h2>
+
+
+<table class="logTable">
+
+  <tr>
+
+    <th>Type</th>
+
+    <th>Cost</th>
+
+    <th>TimeStamp</th>
+
+    <th>Time Elapsed</th>
+
+  </tr>
+
+  {{#each actionsList}}
+
+  <tr>
+
+    <td>{{type}}</td>
+
+    <td>{{cost}}</td>
+
+    <td>{{timestamp}}</td>
+
+    <td>{{timeAgo}}</td>
+
+  </tr>
+
+  {{/each}}
+
+</table>
