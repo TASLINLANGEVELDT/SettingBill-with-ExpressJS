@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "travis": "^0.1.1"
+    "travis": "^0.1.1",
+    "travis.yml": "^1.0.0"
   }
 }
